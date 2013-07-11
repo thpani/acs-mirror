@@ -1,0 +1,80 @@
+@import "bootstrap-sass/lib/bootstrap";
+
+/* Put your CSS here */
+html, body {
+  margin: 20px;
+}
+
+body {
+    background: #fafafa;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #333;
+}
+
+.hero-unit {
+    margin: 50px auto 0 auto;
+    width: 300px;
+    font-size: 18px;
+    font-weight: 200;
+    line-height: 30px;
+    background-color: #eee;
+    border-radius: 6px;
+    padding: 60px;
+}
+
+.hero-unit h1 {
+    font-size: 60px;
+    line-height: 1;
+    letter-spacing: -1px;
+}
+
+// My CSS
+
+.acs-hero {
+    width: auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-top: 0;
+}
+.posts {
+    list-style-type: none;
+    margin-left: 0;
+}
+.post {
+    margin-top: 2em;
+}
+.post .from {
+    font-weight: bold;
+}
+.post .last,
+.post .last a span{
+    font-size: small;
+    color: grey;
+}
+.post .link {
+    margin-bottom: 0;
+    padding: 10px;
+}
+.post .link,
+.post .last {
+    margin-top: 4px;
+}
+.post .entry {
+    overflow: hidden; // trigger BFC
+}
+.post .fromimg,
+.post .link img {
+    float: left;
+    margin-right: 10px;
+}
+.post .caption,
+.post .description {
+    font-size: small;
+    color: grey;
+    cursor: pointer;
+}
+.post .link a:hover,
+.post .link a:focus {
+  color: auto;
+  text-decoration: none;
+}

@@ -1,0 +1,41 @@
+<div class="hero-unit acs-hero">
+    <h1>{{group.name}}</h1>
+    <p><img src="{{group.icon}}" /> {{group.description}}</p>
+</div>
+<p>&nbsp;</p>
+<div class="alert alert-info">
+    <strong>Heads up!</strong> This is a read-only mirror of the <a href="{{group.link}}" target="_blank">{{group.name}} Facebook page</a>. Posting is only possible from <a href="{{group.link}}">there</a>.
+</div>
+<ul class="posts">
+    <li ng-repeat="post in feed.data" class="post">
+        <div class="fromimg" ng-init="user=getUser(post.from.id)">
+            <img src="{{user.picture.data.url}}" />
+        </div>
+        <div class="entry">
+            <div class="from">{{post.from.name}}</div>
+            <div class="message" ng-bind-html="post.message | linky"></div>
+            <div class="link clearfix well" ng-show="post.name">
+                <img src="{{post.picture}}" ng-show="post.picture"/>
+                <a href="{{post.link}}" target="_blank" />
+                    <div class="name">{{post.name}}</div>
+                    <div class="caption">{{post.caption}}</div>
+                    <div class="description">{{post.description}}</div>
+                </a>
+            </div>
+            <div class="last">
+                <img src="{{post.icon}}" ng-show="post.icon" />
+                <a href="//facebook.com/{{post.id}}" target="_blank">
+                    <span>{{post.created_time | date:'medium'}}</span>
+                    <span ng-show="post.comments.data.length"> &middot; {{post.comments.data.length}} comments</span>
+                    <span ng-show="post.likes.data.length"> &middot; {{post.likes.data.length}} likes</span>
+                </a>
+            </div>
+        </div>
+    </li>
+</ul>
+<p>&nbsp;</p>
+<div style="height: 1px; background-color: grey; text-align: center">
+    <span style="background-color: #fafafa; color:grey; position: relative; top: -0.5em; padding:1em">
+        At the moment, we only pull the latest posts from Facebook.
+    </span>
+</div>
