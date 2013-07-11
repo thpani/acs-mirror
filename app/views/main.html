@@ -26,10 +26,20 @@
                 <img ng-src="{{post.icon}}" ng-show="post.icon" />
                 <a ng-href="//facebook.com/{{post.id}}" target="_blank">
                     <span>{{post.created_time | date:'medium'}}</span>
-                    <span ng-show="post.comments.data.length"> &middot; {{post.comments.data.length}} comments</span>
                     <span ng-show="post.likes.data.length"> &middot; {{post.likes.data.length}} likes</span>
                 </a>
+                <span ng-show="post.comments.data.length"> &middot; <a href="" ng-click="post.comments.show = !post.comments.show">{{post.comments.data.length}} comments</a></span>
             </div>
+            <ul class="comments well" ng-show="post.comments.data.length && post.comments.show">
+                <li ng-repeat="comment in post.comments.data">
+                <div><strong>{{comment.from.name}}</strong> {{comment.message}}</div>
+                <div class="last">
+                    {{comment.created_time | date:'medium'}}
+                    <span ng-show="comment.like_count">&middot; {{comment.like_count}} likes</span>
+                </div>
+                <hr ng-hide="$last"/>
+                </li>
+            </ul>
         </div>
         <hr/>
     </li>

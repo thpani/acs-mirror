@@ -30,51 +30,59 @@ body {
 
 // My CSS
 
+a {cursor:pointer;}
 .acs-hero {
     width: auto;
     padding-top: 20px;
     padding-bottom: 20px;
     margin-top: 0;
 }
-.posts {
+.posts,
+.post .comments {
     list-style-type: none;
     margin-left: 0;
 }
 .post {
     margin-top: 2em;
-}
-.post .from {
-    font-weight: bold;
-}
-.post .last,
-.post .last a span{
-    font-size: small;
-    color: grey;
-}
-.post .link {
-    margin-bottom: 0;
-    padding: 10px;
-}
-.post .link,
-.post .last {
-    margin-top: 4px;
-}
-.post .entry {
-    overflow: hidden; // trigger BFC
-}
-.post .fromimg,
-.post .link img {
-    float: left;
-    margin-right: 10px;
-}
-.post .caption,
-.post .description {
-    font-size: small;
-    color: grey;
-    cursor: pointer;
-}
-.post .link a:hover,
-.post .link a:focus {
-  color: auto;
-  text-decoration: none;
+    .from {
+        font-weight: bold;
+    }
+    .last,
+    .last a span,
+    .last span a, {
+        font-size: small;
+        color: grey;
+    }
+    .comments {
+        font-size: small;
+        hr {
+            margin: 5px 0;
+        }
+    }
+    .link {
+        margin-bottom: 0;
+        padding: 10px;
+    }
+    .link,
+    .last {
+        margin-top: 4px;
+    }
+    .entry {
+        overflow: hidden; // trigger BFC
+    }
+    .fromimg,
+    .link img {
+        float: left;
+        margin-right: 10px;
+    }
+    .caption,
+    .description {
+        font-size: small;
+        color: grey;
+    }
+    .link a:hover,
+    .link a:focus {
+        color: auto;
+        text-decoration: none;
+    }
 }
