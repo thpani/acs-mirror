@@ -32,7 +32,7 @@
             </div>
             <ul class="comments well" ng-show="post.comments.data.length && post.comments.show">
                 <li ng-repeat="comment in post.comments.data">
-                <div><strong>{{comment.from.name}}</strong> {{comment.message}}</div>
+                <div><strong>{{comment.from.name}}</strong> <span ng-bind-html="comment.message | linky"/></div>
                 <div class="last">
                     {{comment.created_time | date:'medium'}}
                     <span ng-show="comment.like_count">&middot; {{comment.like_count}} likes</span>
