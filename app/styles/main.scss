@@ -11,56 +11,52 @@ body {
     color: #333;
 }
 
-.hero-unit {
-    margin: 50px auto 0 auto;
-    width: 300px;
-    font-size: 18px;
-    font-weight: 200;
-    line-height: 30px;
-    background-color: #eee;
-    border-radius: 6px;
-    padding: 60px;
-}
-
-.hero-unit h1 {
-    font-size: 60px;
-    line-height: 1;
-    letter-spacing: -1px;
-}
-
 // My CSS
 
-a {cursor:pointer;}
-.acs-hero {
-    width: auto;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    margin-top: 0;
+$small-font: small;
+@mixin less-important {
+    color: grey;
+    font-size: $small-font;
 }
-.posts,
-.post .comments {
+@mixin unstyle-ul {
     list-style-type: none;
     margin-left: 0;
 }
+
+.acs-hero {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.posts,
+.post .comments {
+    @include unstyle-ul;
+}
+
 .post {
-    margin-top: 2em;
     .from {
         font-weight: bold;
     }
+    .link {
+        margin-bottom: 10px;
+        padding: 10px;
+    }
+    .link .caption,
+    .link .description,
     .last,
     .last a, {
-        font-size: small;
-        color: grey;
+        @include less-important;
+    }
+    .link a:hover,
+    .link a:focus {
+        color: auto;
+        text-decoration: none;
     }
     .comments {
-        font-size: small;
+        font-size: $small-font;
         hr {
             margin: 5px 0;
         }
-    }
-    .link {
-        margin-bottom: 0;
-        padding: 10px;
     }
     .link,
     .last {
@@ -73,15 +69,5 @@ a {cursor:pointer;}
     .link img {
         float: left;
         margin-right: 10px;
-    }
-    .caption,
-    .description {
-        font-size: small;
-        color: grey;
-    }
-    .link a:hover,
-    .link a:focus {
-        color: auto;
-        text-decoration: none;
     }
 }
