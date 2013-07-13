@@ -26,13 +26,17 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    <div ng-include="'views/header.html'"></div>
     <div class="container-fluid">
         <div class="row-fluid">
-            <div class="span12" ng-view=""></div>
+            <div class="span1"></div>
+            <div class="span10">
+                <div ng-include="'views/header.html'"></div>
+                <div ng-view=""></div>
+                <div ng-include="'views/footer.html'"></div>
+            </div>
+            <div class="span1"></div>
         </div>
     </div>
-    <div ng-include="'views/footer.html'"></div>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <script>

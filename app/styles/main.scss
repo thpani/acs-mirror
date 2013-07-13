@@ -28,6 +28,10 @@ $small-font: small;
     padding-bottom: 20px;
 }
 
+.posts {
+    margin-top: 30px;
+}
+
 .posts,
 .post .comments {
     @include unstyle-ul;
@@ -59,7 +63,8 @@ $small-font: small;
         }
     }
     .link,
-    .last {
+    .last,
+    .comments {
         margin-top: 4px;
     }
     .entry {
