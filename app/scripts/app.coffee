@@ -6,7 +6,7 @@ angular.module('acsApp', ['ngResource', 'ngSanitize'])
     $routeProvider
       .when '/',
         templateUrl: 'views/main.html'
-        controller: 'MainCtrl'
+        controller: 'PostCtrl'
       .otherwise
         redirectTo: '/'
   ]
