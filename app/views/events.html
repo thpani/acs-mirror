@@ -1,0 +1,10 @@
+<ul class="events">
+    <li ng-repeat="event in events.data" class="post">
+        <div class="entry">
+            <div>{{event.start_time | date:'fullDate'}} {{event.start_time | date:'shortTime'}}</div>
+            <div class="from">{{event.name}}</div>
+            <div>{{event.location}}</div>
+        </div>
+        <hr/>
+    </li>
+</ul>

@@ -7,6 +7,9 @@ angular.module('acsApp', ['ngResource', 'ngSanitize'])
       .when '/',
         templateUrl: 'views/main.html'
         controller: 'PostCtrl'
+      .when '/events',
+        templateUrl: 'views/events.html'
+        controller: 'EventsCtrl'
       .otherwise
         redirectTo: '/'
   ]

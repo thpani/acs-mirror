@@ -13,11 +13,17 @@ angular.module('acsApp')
                 $scope.group.link = "https://www.facebook.com/groups/AustrianComputerScience/"
             )
         )
-            User = $resource('https://graph.facebook.com/:userid')
-            $scope.getUser = (id) -> User.get(userid: id, fields: 'picture')
+        User = $resource('https://graph.facebook.com/:userid')
+        $scope.getUser = (id) -> User.get(userid: id, fields: 'picture')
 
     .controller 'PostCtrl', ($scope, $resource) ->
         $scope.tokenPromise.then((tokens) ->
             Feed = $resource('https://graph.facebook.com/552255311482154/feed', access_token: tokens.app)
             $scope.feed = Feed.get()
+        )
+
+    .controller 'EventsCtrl', ($scope, $resource) ->
+        $scope.tokenPromise.then((tokens) ->
+            Events = $resource('https://graph.facebook.com/552255311482154/events', access_token: tokens.user)
+            $scope.events = Events.get()
         )
