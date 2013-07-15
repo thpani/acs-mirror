@@ -1,3 +1,4 @@
+<div ng-include="'views/header.html'"></div>
 <ul class="posts">
     <li ng-repeat="post in feed.data" class="post">
         <div class="fromimg" ng-init="user=getUser(post.from.id)">
@@ -36,3 +37,4 @@
         <hr/>
     </li>
 </ul>
+<div ng-include="'views/footer.html'"></div>
