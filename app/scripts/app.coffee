@@ -25,6 +25,8 @@ angular.module('acsApp', ['ngResource', 'ngSanitize', '$strap.directives'])
         .when '/events',
             templateUrl: 'views/events.html'
             controller: 'EventsCtrl'
+        .when '/about',
+            templateUrl: 'views/about.html'
         .otherwise
             redirectTo: '/'
     ]

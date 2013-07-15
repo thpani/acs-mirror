@@ -1,11 +1,28 @@
 @import "bootstrap-sass/lib/bootstrap";
 
+.hero-unit h1 {
+    font-size: 38.5px;
+}
+
+/* set a max-width for horizontal fluid layout and make it centered */
+.container-fluid {
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 1200px; /* or 950px */
+}
+
 body {
     background: #fafafa;
     padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
 }
 
-// My CSS
+.running p {
+    margin-bottom: 4em;
+}
+.spinner {
+    width: 60px;
+    height: 60px;
+}
 
 $small-font: small;
 @mixin less-important {

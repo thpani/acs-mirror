@@ -28,11 +28,20 @@
     <div class="navbar navbar-inverse navbar-fixed-top" bs-navbar>
         <div class="navbar-inner">
             <div class="container-fluid">
-                <a class="brand" href="#">{{group.name}}</a>
-                <ul class="nav">
-                    <li data-match-route="/"><a href="#/">Messages</a></li>
-                    <li data-match-route="/events"><a href="#/events">Events</a></li>
-                </ul>
+                <div class="row-fluid">
+                    <div class="span1"></div>
+                    <div class="span10">
+                        <a class="brand" href="#">{{group.name}}</a>
+                        <ul class="nav">
+                            <li data-match-route="/"><a href="#/">Messages</a></li>
+                            <li data-match-route="/events"><a href="#/events">Events</a></li>
+                        </ul>
+                        <ul class="nav pull-right">
+                            <li data-match-route="/about"><a href="#/about">About</a></li>
+                        </ul>
+                    </div>
+                    <div class="span1"></div>
+                </div>
             </div>
         </div>
     </div>
