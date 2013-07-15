@@ -1,14 +1,8 @@
 @import "bootstrap-sass/lib/bootstrap";
 
-/* Put your CSS here */
-html, body {
-  margin: 20px;
-}
-
 body {
     background: #fafafa;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    color: #333;
+    padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
 }
 
 // My CSS

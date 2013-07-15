@@ -25,6 +25,18 @@
       <script src="bower_components/json3/lib/json3.min.js"></script>
     <![endif]-->
 
+    <div class="navbar navbar-inverse navbar-fixed-top" bs-navbar>
+        <div class="navbar-inner">
+            <div class="container-fluid">
+                <a class="brand" href="#">{{group.name}}</a>
+                <ul class="nav">
+                    <li data-match-route="/"><a href="#/">Messages</a></li>
+                    <li data-match-route="/events"><a href="#/events">Events</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
     <!-- Add your site or application content here -->
     <div class="container-fluid">
         <div class="row-fluid">
@@ -74,6 +86,7 @@
         <script src="bower_components/angular-resource/angular-resource.js"></script>
         <script src="bower_components/angular-cookies/angular-cookies.js"></script>
         <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+        <script src="bower_components/angular-strap/dist/angular-strap.js"></script>
         <!-- endbuild -->
 </body>
 </html>

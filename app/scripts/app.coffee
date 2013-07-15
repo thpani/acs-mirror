@@ -1,6 +1,6 @@
 'use strict'
 
-angular.module('acsApp', ['ngResource', 'ngSanitize'])
+angular.module('acsApp', ['ngResource', 'ngSanitize', '$strap.directives'])
     .factory('resourceFactory', ($resource) ->
         tokens = null
         $.ajax(
