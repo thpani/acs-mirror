@@ -4,13 +4,13 @@ angular.module('acsApp', ['ngResource', 'ngSanitize', '$strap.directives', 'angu
     .factory('resourceFactory', ($resource) ->
         tokens = null
         $.ajax(
-            url: 'http://forsyte.at/acs/srv/tokens.php'
+            url: 'http://austriancomputerscience.at/srv/tokens.php'
             async: false
             dataType: 'json'
             success: (msg) -> tokens = msg
         )
         return (
-            Events: $resource('http://forsyte.at/acs/srv/events.php')
+            Events: $resource('http://austriancomputerscience.at/srv/events.php')
             Feed: $resource('https://graph.facebook.com/552255311482154/feed', access_token: tokens.app)
             Group: $resource('https://graph.facebook.com/552255311482154/', access_token: tokens.app)
             User: $resource('https://graph.facebook.com/:userid')

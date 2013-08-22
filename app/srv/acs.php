@@ -14,7 +14,7 @@ define('USER_ID', '100006390901187');
 /* ***** END CONFIG ***** */
 
 define('GRAPH_API_URL', 'https://graph.facebook.com');
-define('REDIRECT_URL', 'http://'.$_SERVER['HTTP_HOST'].'/acs/srv/login_user.php');
+define('REDIRECT_URL', 'http://'.$_SERVER['HTTP_HOST'].'/srv/login_user.php');
 
 /* https://developers.facebook.com/docs/facebook-login/access-tokens/ */
 
