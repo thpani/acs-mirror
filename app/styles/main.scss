@@ -153,7 +153,11 @@ $small-font: small;
         margin-top: 4px;
     }
     .entry {
+        padding: 4px;
         overflow: hidden; // trigger BFC
+    }
+    .entry.upcoming {
+        background: #FFFFDD;
     }
     .fromimg,
     .link img {

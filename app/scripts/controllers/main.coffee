@@ -13,3 +13,4 @@ angular.module('acsApp')
 
     .controller 'EventsCtrl', ($scope, resourceFactory) ->
         $scope.events = resourceFactory.getEvents()
+        $scope.is_upcoming = (start_time) -> new Date(start_time) > new Date()
