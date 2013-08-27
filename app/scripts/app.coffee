@@ -22,15 +22,18 @@ angular.module('acsApp', ['ngResource', 'ngSanitize', '$strap.directives', 'angu
                 if not users[id]
                     users[id] = User.get(userid: id, fields: 'picture')
                 return users[id]
-            getGroup: () ->
+            getGroup: ->
                 if not group
-                    group = Group.get()
+                    group = Group.get(null, ->
+                        # workaround, atm link is not set in graph api response
+                        group.link = 'https://www.facebook.com/groups/AustrianComputerScience/'
+                    )
                 return group
-            getFeed: () ->
+            getFeed: ->
                 if not feed
                     feed = Feed.get()
                 return feed
-            getEvents: () ->
+            getEvents: ->
                 if not events
                     events = Events.get()
                 return events
