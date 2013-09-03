@@ -2,10 +2,11 @@
 <div us-spinner ng-hide="feed.data"></div>
 <ul class="posts">
     <li ng-repeat="post in feed.data" class="post">
+        <div class="entry">
         <div class="fromimg" ng-init="user=getUser(post.from.id)">
             <img ng-src="{{user.picture.data.url}}" />
         </div>
-        <div class="entry">
+            <div class="content">
             <div class="from">{{post.from.name}}</div>
             <div class="message" ng-bind-html="post.message | linky"></div>
             <div class="link clearfix well" ng-show="post.name">

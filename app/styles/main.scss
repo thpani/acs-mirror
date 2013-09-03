@@ -152,8 +152,7 @@ $small-font: small;
     .comments {
         margin-top: 4px;
     }
-    .entry {
-        padding: 4px;
+    .content {
         overflow: hidden; // trigger BFC
     }
     .entry.highlight {
