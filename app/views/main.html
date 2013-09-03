@@ -1,40 +1,47 @@
 <div ng-include="'views/header.html'"></div>
 <div us-spinner ng-hide="feed.data"></div>
 <ul class="posts">
-    <li ng-repeat="post in feed.data" class="post">
+    <li ng-repeat="post in feed.data" class="post" id="{{post.id}}">
         <div class="entry">
-        <div class="fromimg" ng-init="user=getUser(post.from.id)">
-            <img ng-src="{{user.picture.data.url}}" />
-        </div>
+            <div class="fromimg" ng-init="user=getUser(post.from.id)">
+                <img ng-src="{{user.picture.data.url}}" />
+            </div>
             <div class="content">
-            <div class="from">{{post.from.name}}</div>
-            <div class="message" ng-bind-html="post.message | linky"></div>
-            <div class="link clearfix well" ng-show="post.name">
-                <img ng-src="{{post.picture}}" ng-show="post.picture"/>
-                <a ng-href="{{post.link}}" target="_blank" />
-                    <div class="name">{{post.name}}</div>
-                    <div class="caption">{{post.caption}}</div>
-                    <div class="description">{{post.description}}</div>
-                </a>
-            </div>
-            <div class="last">
-                <img ng-src="{{post.icon}}" ng-show="post.icon" />
-                <a ng-href="//facebook.com/{{post.id}}" target="_blank">
-                    <span>{{post.created_time | date:'medium'}}</span>
-                    <span ng-show="post.likes.data.length"> &middot; {{post.likes.data.length}} likes</span>
-                </a>
-                <span ng-show="post.comments.data.length"> &middot; <a href="" ng-click="post.comments.show = !post.comments.show">{{post.comments.data.length}} comments</a></span>
-            </div>
-            <ul class="comments well" ng-show="post.comments.data.length && post.comments.show">
-                <li ng-repeat="comment in post.comments.data">
-                <div><strong>{{comment.from.name}}</strong> <span ng-bind-html="comment.message | linky"/></div>
-                <div class="last">
-                    {{comment.created_time | date:'medium'}}
-                    <span ng-show="comment.like_count">&middot; {{comment.like_count}} likes</span>
+                <div class="from">{{post.from.name}}</div>
+                <div class="message" ng-bind-html="post.message | linky"></div>
+                <div class="link clearfix well" ng-show="post.name">
+                    <img ng-src="{{post.picture}}" ng-show="post.picture"/>
+                    <a ng-href="{{post.link}}" target="_blank">
+                        <div class="name">{{post.name}}</div>
+                        <div class="caption">{{post.caption}}</div>
+                        <div class="description">{{post.description}}</div>
+                    </a>
                 </div>
-                <hr ng-hide="$last"/>
-                </li>
-            </ul>
+                <div ng-hide="post.name || post.message">
+                    <i>The post's privacy settings prevent showing its attachment.</i>
+                </div>
+                <div class="last">
+                    <img ng-src="{{post.icon}}" ng-show="post.icon" />
+                    <span>{{post.created_time | date:'medium'}}</span>
+                    <span ng-show="post.likes.data.length"> &middot; <a href="" ng-click="post.likes.show = !post.likes.show">{{post.likes.data.length}} <ng-pluralize count="post.likes.data.length" when="{'1': 'like', 'other': 'likes'}"/></a></span>
+                    <span ng-show="post.comments.data.length"> &middot; <a href="" ng-click="post.comments.show = !post.comments.show">{{post.comments.data.length}} <ng-pluralize count="post.comments.data.length" when="{'1': 'comment', 'other': 'comments'}"/></a></span>
+                    <span> &middot; <a ng-href="//facebook.com/{{post.id}}" target="_blank">this post on facebook</a>
+                    </span>
+                </div>
+                <ul class="likes well" ng-show="post.likes.data.length && post.likes.show">
+                    <li ng-repeat="like in post.likes.data">{{like.name}}</li>
+                </ul>
+                <ul class="comments well" ng-show="post.comments.data.length && post.comments.show">
+                    <li ng-repeat="comment in post.comments.data">
+                        <div><strong>{{comment.from.name}}</strong> <span ng-bind-html="comment.message | linky"/></div>
+                        <div class="last">
+                            {{comment.created_time | date:'medium'}}
+                            <span ng-show="comment.like_count">&middot; {{comment.like_count}} <ng-pluralize count="comment.like_count" when="{'1': 'like', 'other': 'likes'}"/></span>
+                        </div>
+                        <hr ng-hide="$last"/>
+                    </li>
+                </ul>
+            </div>
         </div>
         <hr/>
     </li>

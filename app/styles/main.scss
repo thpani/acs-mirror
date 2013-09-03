@@ -118,7 +118,8 @@ $small-font: small;
 }
 
 .posts,
-.post .comments {
+.post .comments,
+.post .likes {
     @include unstyle-ul;
 }
 
@@ -141,7 +142,8 @@ $small-font: small;
         color: auto;
         text-decoration: none;
     }
-    .comments {
+    .comments,
+    .likes {
         font-size: $small-font;
         hr {
             margin: 5px 0;
@@ -149,7 +151,8 @@ $small-font: small;
     }
     .link,
     .last,
-    .comments {
+    .comments,
+    .likes {
         margin-top: 4px;
     }
     .content {
