@@ -9,7 +9,7 @@
             <div class="content">
                 <div class="from">{{post.from.name}}</div>
                 <div class="message" ng-bind-html="post.message | linky"></div>
-                <div class="link clearfix well" ng-show="post.name">
+                <div class="link well clearfix" ng-show="post.name">
                     <img ng-src="{{post.picture}}" ng-show="post.picture"/>
                     <a ng-href="{{post.link}}" target="_blank">
                         <div class="name">{{post.name}}</div>
@@ -29,15 +29,30 @@
                     </span>
                 </div>
                 <ul class="likes well" ng-show="post.likes.data.length && post.likes.show">
-                    <li ng-repeat="like in post.likes.data">{{like.name}}</li>
+                    <li ng-repeat="like in post.likes.data">
+                        <div class="fromimg" ng-init="user=getUser(like.id)">
+                            <img ng-src="{{user.picture.data.url}}" />
+                        </div>
+                        <div class="content">
+                            <strong>{{like.name}}</strong>
+                        </div>
+                        <div class="clearfix"></div>
+                        <hr ng-hide="$last"/>
+                    </li>
                 </ul>
                 <ul class="comments well" ng-show="post.comments.data.length && post.comments.show">
                     <li ng-repeat="comment in post.comments.data">
-                        <div><strong>{{comment.from.name}}</strong> <span ng-bind-html="comment.message | linky"/></div>
-                        <div class="last">
-                            {{comment.created_time | date:'medium'}}
-                            <span ng-show="comment.like_count">&middot; {{comment.like_count}} <ng-pluralize count="comment.like_count" when="{'1': 'like', 'other': 'likes'}"/></span>
+                        <div class="fromimg" ng-init="user=getUser(comment.from.id)">
+                            <img ng-src="{{user.picture.data.url}}" />
                         </div>
+                        <div class="content">
+                            <strong>{{comment.from.name}}</strong> <span ng-bind-html="comment.message | linky"/>
+                            <div class="last">
+                                {{comment.created_time | date:'medium'}}
+                                <span ng-show="comment.like_count">&middot; {{comment.like_count}} <ng-pluralize count="comment.like_count" when="{'1': 'like', 'other': 'likes'}"/></span>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
                         <hr ng-hide="$last"/>
                     </li>
                 </ul>
