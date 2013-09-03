@@ -7,7 +7,7 @@
 <ul class="events">
     <hr/>
     <li ng-repeat="event in events.data" class="post">
-        <div class="entry" ng-class="{ upcoming: is_upcoming(event.start_time) }">
+        <div class="entry" ng-class="{ highlight: is_upcoming(event.start_time) }">
             <div>{{event.start_time | date:'fullDate'}} {{event.start_time | date:'shortTime'}}</div>
             <div class="from">{{event.name}}</div>
             <div>{{event.location}}</div>
