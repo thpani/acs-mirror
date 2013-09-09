@@ -158,6 +158,9 @@ $small-font: small;
     .content {
         overflow: hidden; // trigger BFC
     }
+    .entry {
+        padding: 4px;
+    }
     .entry.highlight {
         background: #FFFFDD;
     }
