@@ -118,6 +118,7 @@ $small-font: small;
 }
 
 .posts,
+.events,
 .post .comments,
 .post .likes {
     @include unstyle-ul;
