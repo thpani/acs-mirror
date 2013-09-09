@@ -129,7 +129,6 @@ $small-font: small;
         font-weight: bold;
     }
     .link {
-        margin-bottom: 10px;
         padding: 10px;
     }
     .link .caption,
@@ -167,4 +166,8 @@ $small-font: small;
         float: left;
         margin-right: 10px;
     }
+}
+
+.well {
+    margin-bottom: 0;
 }
