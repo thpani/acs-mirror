@@ -17,7 +17,7 @@
                         <div class="description">{{post.description}}</div>
                     </a>
                 </div>
-                <div ng-hide="post.name || post.message">
+                <div ng-show="post.caption.indexOf('Attachment Unavailable') == 0">
                     <i>The post's privacy settings prevent showing its attachment.</i>
                 </div>
                 <div class="last">
