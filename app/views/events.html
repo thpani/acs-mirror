@@ -4,6 +4,7 @@
     <p>To subscribe: <a href="http://wallflux.com/events/552255311482154">right-click this link</a>, copy link address, and paste it into your favourite calendar application.</p>
 </div>
 <div us-spinner ng-hide="events.data"></div>
+<div us-spinner ng-show="events.data == null"></div>
 <ul class="events">
     <hr/>
     <li ng-repeat="event in events.data" class="post">
@@ -15,4 +16,8 @@
         <hr/>
     </li>
 </ul>
+<div ng-show="events.data.length == 0" class="bs-callout bs-callout-warning ng-scope">
+  <h4>Sorry, currently there are no future events.</h4>
+  <p>Would you like to <a href="{{ group.link }}events/">schedule one</a>?</p>
+</div>
 <div ng-include="'views/footer.html'" ng-show="events.data"></div>
