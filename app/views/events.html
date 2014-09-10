@@ -1,9 +1,7 @@
 <div ng-include="'views/header.html'"></div>
-<div class="bs-callout bs-callout-info">
-    <h4>Calendar feed</h4>
-    <p>To subscribe: <a href="http://wallflux.com/events/552255311482154">right-click this link</a>, copy link address, and paste it into your favourite calendar application.</p>
-</div>
-<div us-spinner ng-hide="events.data"></div>
+<p>
+  <span class="lead"> <i class="fa fa-calendar"></i> Calendar feed</span><br/>to subscribe: <a href="http://wallflux.com/events/552255311482154">right-click this link</a>, copy link address, and paste it into your favourite calendar application
+</p>
 <div us-spinner ng-show="events.data == null"></div>
 <ul class="events">
     <hr/>
