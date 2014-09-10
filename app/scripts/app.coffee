@@ -1,6 +1,6 @@
 'use strict'
 
-angular.module('acsApp', ['ngResource', 'ngSanitize', '$strap.directives', 'angularSpinner'])
+angular.module('acsApp', ['ngResource', 'ngSanitize', 'ngRoute', '$strap.directives', 'angularSpinner'])
     .factory('resourceFactory', ($resource) ->
         tokens = null
         feed = null
@@ -39,7 +39,7 @@ angular.module('acsApp', ['ngResource', 'ngSanitize', '$strap.directives', 'angu
                 return events
         )
     )
-    .config ['$routeProvider', '$httpProvider', ($routeProvider, $httpProvider) ->
+    .config ($routeProvider, $httpProvider) ->
         delete $httpProvider.defaults.headers.common["X-Requested-With"]
         $routeProvider
         .when '/',
@@ -52,4 +52,3 @@ angular.module('acsApp', ['ngResource', 'ngSanitize', '$strap.directives', 'angu
             templateUrl: 'views/about.html'
         .otherwise
             redirectTo: '/'
-    ]
